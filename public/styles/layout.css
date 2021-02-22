@@ -21,6 +21,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+h2 {
+  color: #ffffff;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
