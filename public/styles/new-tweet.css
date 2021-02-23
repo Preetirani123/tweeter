@@ -1,0 +1,45 @@
+textarea#tweet-text {
+  width: 100%;
+  border: 0px;
+  border-bottom: 3px solid #555149;
+  background: #f1efe9;
+}
+textarea{
+  color: #555149;
+}
+.tweet-button {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+section.new-tweet h2 {
+  color: #4056A1;
+}
+section.new-tweet {
+  margin: 1em;
+}
+button {
+background-color: #4056A1;
+border: none;
+color: white;
+text-align: center;
+text-decoration: none;
+padding: 5px 10px;
+cursor: pointer;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #555149;
+  font-weight: 600;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #555149;
+  font-weight: 600;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #555149;
+  font-weight: 600;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #555149;
+  font-weight: 600;
+}
