@@ -17,12 +17,16 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-content.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -31,6 +35,7 @@
       <span>tweeter</span>
       <div class="new-tweet-btn"><strong>Write</strong> a new tweet</div>
     </nav>
+    <div class="clearfix"></div>
     <!-- Header container -->
     <header>
       <div>
@@ -38,7 +43,7 @@
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+          <h2>Preeti Rani</h2>
       </div>
   </header>
 
@@ -55,6 +60,28 @@
           </div>
         </form>
       </section>
+      <article>
+        <header>
+          <div class="header-content"> 
+            <img src="https://i.imgur.com/73hZDYK.png">
+            <p>Newton</p>
+          </div>
+          <div class="header-user">
+            <p>@SirIsaac</p>
+          </div >
+        </header>
+        <div class="content-body">The curve is a  although this is not rigorously true for a finite population (see below).</div>
+        <footer>
+          <span> <p> 10 days ago</p></span>
+          <span>
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </span>
+        </footer>
+      </article>
+
+
   </main>
   </body>
 </html>

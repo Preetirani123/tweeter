@@ -5,6 +5,8 @@ nav {
   color: #ffffff;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0px;
   
 }
 nav span {
@@ -13,4 +15,10 @@ nav span {
 }
 .new-tweet-btn{
   margin: 1.5em;
+}
+.clearfix {
+  overflow: auto;
+  height: 120px;
+  content: " ";
+  clear: both;
 }
