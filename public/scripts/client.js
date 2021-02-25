@@ -36,11 +36,11 @@ const renderTweets = function(tweets) {
     $tweet = createTweetElement(tweets[data]);
 
     // takes return value and appends it to the tweets container
-    $('#tweets-container').append($tweet)
+    $('#tweets-container').prepend($tweet)
   }
 }
 // 
-const loadtweets = function(tweets) {
+const loadtweets = function() {
   $.ajax('/tweets', { method: 'GET' })
   .then((allTweeets)  => {
     renderTweets(allTweeets);
@@ -96,26 +96,24 @@ const createTweetElement = function(tweet) {
 }
 
 $(document).ready( function() {
-  // renderTweets(tweetDatabase);
-// Fake data taken from initial-tweets.json
+  loadtweets()
+
 $( "form" ).on( "submit", function( event ) {
   event.preventDefault();
-  let generateTweet = $("#tweet-text").serialize();
-  console.log(generateTweet)
-  $.ajax({
-    url: '/tweets', method: 'POST', data: generateTweet
-  }).then((output) => {
-    loadtweets(output)
-  }); 
-  
-  
-  
-  // => {
-  //   $.ajax('/tweets', { method: 'GET' })
-  // .then((allTweeets)  => {
-  //   console.log('Success: ', allTweeets)
-  //   renderTweets(allTweeets);
-  // });
+
+  if (($(this).find("#tweet-text").val().length) === 0) {
+    alert("Please write some tweet")
+  }
+  else if (($(this).find("#tweet-text").val().length) > 140) {
+    alert("Tweet is too long")
+  }
+  else {
+    let generateTweet = $("#tweet-text").serialize();
+    console.log(generateTweet)
+    $.ajax({
+      url: '/tweets', method: 'POST', data: generateTweet
+    }).then(loadtweets());
+  }
 
 });
 });
