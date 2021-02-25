@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
+const tweetDatabase = [
   {
     "user": {
       "name": "Newton",
@@ -29,6 +29,24 @@ const data = [
   }
 ]
 
+const renderTweets = function(tweets) {
+  // loops through tweets
+  for (let data in tweets){
+    // calls createTweetElement for each tweet
+    $tweet = createTweetElement(tweets[data]);
+
+    // takes return value and appends it to the tweets container
+    $('#tweets-container').append($tweet)
+  }
+}
+// 
+const loadtweets = function(tweets) {
+  $.ajax('/tweets', { method: 'GET' })
+  .then((allTweeets)  => {
+    renderTweets(allTweeets);
+  });
+}
+
 const timePassed = function(dateCreated) {
   let timeElapsedinSeconds = (Date.now() - dateCreated) / 1000;
   if (timeElapsedinSeconds /  31556952 >= 1) {
@@ -51,51 +69,54 @@ const timePassed = function(dateCreated) {
   }
 }
 
+const createTweetElement = function(tweet) {
+  const $tweet = (`<article> 
+                  <header> 
+                      <div class="header-content">
+                        <img src="${tweet.user.avatars}">
+                         <p>${tweet.user.name}</p>
+                       </div>
+                       <div class="header-user">
+                         <p>${tweet.user.handle}</p>
+                       </div >
+                   </header>
+                   <div class="content-body">${tweet.content.text}</div>
+                   <footer>
+                     <span> <p> ${timePassed(tweet.created_at)}</p></span>
+                     <span>
+                       <i class="fas fa-flag"></i>
+                       <i class="fas fa-retweet"></i>
+                       <i class="fas fa-heart"></i>
+                    </span>
+                   </footer>
+                </article>`
+              )
+  
+      return $tweet;
+}
 
-
-$(document).ready( function(){
+$(document).ready( function() {
+  // renderTweets(tweetDatabase);
 // Fake data taken from initial-tweets.json
-
-
-  const createTweetElement = function(tweet) {
-    const $tweet = (`<article> 
-                    <header> 
-                        <div class="header-content">
-                          <img src="${tweet.user.avatars}">
-                           <p>${tweet.user.name}</p>
-                         </div>
-                         <div class="header-user">
-                           <p>${tweet.user.handle}</p>
-                         </div >
-                     </header>
-                     <div class="content-body">${tweet.content.text}</div>
-                     <footer>
-                       <span> <p> ${timePassed(tweet.created_at)}</p></span>
-                       <span>
-                         <i class="fas fa-flag"></i>
-                         <i class="fas fa-retweet"></i>
-                         <i class="fas fa-heart"></i>
-                      </span>
-                     </footer>
-                  </article>`
-                )
-    
-        return $tweet;
-}
-
-const renderTweets = function(tweets) {
-  // loops through tweets
-  for (let data in tweets){
-    // calls createTweetElement for each tweet
-    $tweet = createTweetElement(tweets[data]);
-
-    // takes return value and appends it to the tweets container
-    $('#tweets-container').append($tweet)
-  }
-}
-renderTweets(data);
-
-
-
+$( "form" ).on( "submit", function( event ) {
+  event.preventDefault();
+  let generateTweet = $("#tweet-text").serialize();
+  console.log(generateTweet)
+  $.ajax({
+    url: '/tweets', method: 'POST', data: generateTweet
+  }).then((output) => {
+    loadtweets(output)
+  }); 
+  
+  
+  
+  // => {
+  //   $.ajax('/tweets', { method: 'GET' })
+  // .then((allTweeets)  => {
+  //   console.log('Success: ', allTweeets)
+  //   renderTweets(allTweeets);
+  // });
 
 });
+});
+
