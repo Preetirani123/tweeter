@@ -47,6 +47,12 @@ const loadtweets = function() {
   });
 }
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const timePassed = function(dateCreated) {
   let timeElapsedinSeconds = (Date.now() - dateCreated) / 1000;
   if (timeElapsedinSeconds /  31556952 >= 1) {
@@ -80,7 +86,7 @@ const createTweetElement = function(tweet) {
                          <p>${tweet.user.handle}</p>
                        </div >
                    </header>
-                   <div class="content-body">${tweet.content.text}</div>
+                   <div class="content-body">${escape(tweet.content.text)}</div>
                    <footer>
                      <span> <p> ${timePassed(tweet.created_at)}</p></span>
                      <span>
@@ -102,17 +108,22 @@ $( "form" ).on( "submit", function( event ) {
   event.preventDefault();
 
   if (($(this).find("#tweet-text").val().length) === 0) {
-    alert("Please write some tweet")
+    $("#error_1").toggle(true)
   }
+
   else if (($(this).find("#tweet-text").val().length) > 140) {
-    alert("Tweet is too long")
+    $("#error_2").toggle(true)
   }
+
   else {
     let generateTweet = $("#tweet-text").serialize();
-    console.log(generateTweet)
     $.ajax({
       url: '/tweets', method: 'POST', data: generateTweet
-    }).then(loadtweets());
+    }).then(loadtweets())
+    .then($("#tweet-text").val(''))
+    .then($(".counter").text(140))
+    .then($("#error_1").toggle(false))
+    .then($("#error_2").toggle(false))
   }
 
 });

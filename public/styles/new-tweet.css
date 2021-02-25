@@ -46,3 +46,11 @@ cursor: pointer;
 .redColor{
   color:#FF0000;
 }
+
+div#error_1 {
+  display: none;
+}
+
+div#error_2 {
+  display: none;
+}
