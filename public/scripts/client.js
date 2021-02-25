@@ -102,7 +102,14 @@ const createTweetElement = function(tweet) {
 }
 
 $(document).ready( function() {
+
   loadtweets()
+
+  $(".new-tweet-btn").on("click", function(event) {
+    $(".new-tweet").slideToggle( "slow" );
+    $(".new-tweet").find("#tweet-text").focus();
+    
+  });
 
 $( "form" ).on( "submit", function( event ) {
   event.preventDefault();
@@ -127,5 +134,22 @@ $( "form" ).on( "submit", function( event ) {
   }
 
 });
+
+
+  $(window).scroll(function(){ 
+      if ($(this).scrollTop() > 100) { 
+          $('#myBtn').fadeIn(); 
+      } else { 
+          $('#myBtn').fadeOut(); 
+      } 
+  }); 
+  $('#myBtn').click(function(){ 
+      $("html, body").animate({ scrollTop: 0 }, 600); 
+      return false; 
+  }); 
+
+
+
+
 });
 

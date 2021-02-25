@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -33,17 +34,20 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="new-tweet-btn"><strong>Write</strong> a new tweet</div>
+      <div class="new-tweet-btn"><strong>Write</strong> a new tweet<span class="down-btn"><i class="fas fa-angle-double-down"></i></span></div>
     </nav>
     <div class="clearfix"></div>
+    <section class="desktop-container"> 
     <!-- Header container -->
     <header>
-      <div>
+      <div class="desktop-header">
+      <div> 
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
       <div>
           <h2>Preeti Rani</h2>
+      </div>
       </div>
   </header>
 
@@ -65,5 +69,7 @@
       
 
   </main>
+  </section>
+  <button id="myBtn" ><i class="fas fa-chevron-double-up"></i></button>
   </body>
 </html>
