@@ -46,6 +46,9 @@ cursor: pointer;
 .redColor{
   color:#FF0000;
 }
+section.new-tweet {
+  display: none;
+}
 
 div#error_1 {
   display: none;

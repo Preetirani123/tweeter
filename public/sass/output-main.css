@@ -1,0 +1,73 @@
+main {
+  width: 90%;
+  background-color: #f1efe9;
+  margin: auto;
+}
+
+i.fas.fa-chevron-double-up {
+  color: white;
+  font-size: 3rem;
+}
+
+#myBtn {
+  width: 90px;
+  height: 90px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  position: fixed;
+  bottom: 75px;
+  right: 40px;
+  background: #FF0000;
+  border-radius: 50%;
+  display: none;
+}
+#myBtn:hover {
+  text-decoration: none;
+  background: royalblue;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+  section.desktop-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2.5rem;
+  }
+
+  .desktop-container header {
+    height: fit-content;
+    background-color: transparent;
+    width: 100%;
+    align-items: baseline;
+  }
+
+  .desktop-header {
+    background: #d79821;
+    padding: 1rem 4rem;
+    margin: 4rem 1rem;
+  }
+
+  header .desktop-header h2 {
+    padding-top: 0rem;
+    margin-top: 0rem;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  nav {
+    background-color: royalblue;
+  }
+
+  .desktop-container article header {
+    align-items: initial;
+  }
+}
+
+/*# sourceMappingURL=output-main.css.map */

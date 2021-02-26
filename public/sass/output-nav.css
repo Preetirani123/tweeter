@@ -1,4 +1,4 @@
-/* nav {
+nav {
   height: 120px;
   width: 100%;
   background-color: #d89d2d;
@@ -7,15 +7,17 @@
   justify-content: space-between;
   position: fixed;
   top: 0px;
-  
 }
+
 nav span {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   margin: 2.5rem;
 }
-.new-tweet-btn{
+
+.new-tweet-btn {
   margin: 2.5rem;
 }
+
 .clearfix {
   overflow: auto;
   height: 120px;
@@ -26,6 +28,7 @@ nav span {
 section.new-tweet {
   display: none;
 }
+
 .new-tweet-btn:hover {
   color: #ffffff;
   background: #d89d2d;
@@ -33,9 +36,12 @@ section.new-tweet {
   padding: 7px 10px;
   cursor: pointer;
 }
+
 span.down-btn {
   display: block;
   margin: 2px 0px;
   text-align: center;
   color: #FF0000;
-} */
+}
+
+/*# sourceMappingURL=output.css.map */

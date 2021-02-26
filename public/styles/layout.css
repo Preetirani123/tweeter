@@ -25,6 +25,16 @@ h2 {
   color: #ffffff;
 }
 
+.clearfix {
+  overflow: auto;
+  height: 120px;
+  content: " ";
+  clear: both;
+}
+
+
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
