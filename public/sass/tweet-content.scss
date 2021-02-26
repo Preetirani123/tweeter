@@ -5,7 +5,7 @@ article {
   border: 3px solid;
   padding: 1em;
   &:hover{
-    box-shadow:  0px 10px 10px 0px #7485cacc;  
+    box-shadow:  0px 10px 10px 0px $blue-color;  
     .content-body{
       font-weight: 600;
     }
@@ -17,7 +17,7 @@ article {
     }
   }
 
-   header {
+  header {
     background: none;
     align-items: initial;
     justify-content: space-between;
@@ -39,11 +39,13 @@ article {
     .header-user {
       display: none;
     }
-   }
+  }
+
   .content-body {
     border-bottom: 3px solid;
     padding: 1em 0.5em;
   }
+  
   footer {
     display: $display;
     justify-content: space-between;

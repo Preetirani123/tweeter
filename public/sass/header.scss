@@ -2,17 +2,16 @@
 
 header {
   width: 100%;
-  
   justify-content: center;
   align-items: center;
   display: $display;
   flex-direction: column;
-  background-color: #d89d2d;
+  background-color: $primary-color;
 
   h2{
     padding-top: 0rem;
     margin-top: 0rem;
-    color: #4056a1;
+    color: $second-color;
     text-align: center;
   }
 }

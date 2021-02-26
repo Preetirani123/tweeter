@@ -4,7 +4,7 @@ article {
   padding: 1em;
 }
 article:hover {
-  box-shadow: 0px 10px 10px 0px #7485cacc;
+  box-shadow: 0px 10px 10px 0px #4169e1;
 }
 article:hover .content-body {
   font-weight: 600;

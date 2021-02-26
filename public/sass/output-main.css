@@ -5,7 +5,7 @@ main {
 }
 
 i.fas.fa-chevron-double-up {
-  color: white;
+  color: #ffffff;
   font-size: 3rem;
 }
 
@@ -25,7 +25,7 @@ i.fas.fa-chevron-double-up {
 }
 #myBtn:hover {
   text-decoration: none;
-  background: royalblue;
+  background: #4169e1;
 }
 
 /* Laptops / Desktops: minimum width of 1024px */
@@ -45,7 +45,7 @@ i.fas.fa-chevron-double-up {
   }
 
   .desktop-header {
-    background: #d79821;
+    background: #d89d2d;
     padding: 1rem 4rem;
     margin: 4rem 1rem;
   }
@@ -62,7 +62,7 @@ i.fas.fa-chevron-double-up {
   }
 
   nav {
-    background-color: royalblue;
+    background-color: #4169e1;
   }
 
   .desktop-container article header {
